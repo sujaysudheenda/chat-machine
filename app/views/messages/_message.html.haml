@@ -1,0 +1,6 @@
+%li.list-group-item.list-group-item-action
+  .gravatar
+    = gravatar_for message.user
+  .message-body
+    %h3.list-group-item-heading= message.user.name
+    %p.list-group-item-text= message.body

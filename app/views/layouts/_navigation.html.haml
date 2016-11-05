@@ -1,0 +1,26 @@
+.container
+  // Brand and toggle get grouped for better mobile display
+  .navbar-header
+    %button.navbar-toggle{"data-target" => "#nav-bar-colapsable-nav", "data-toggle" => "collapse", :type => "button"}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand{href: "#{}"} Chat Machine
+
+  / Collect the nav links, forms, and other content for toggling
+  #nav-bar-colapsable-nav.collapse.navbar-collapse
+    - if current_user
+      %ul.nav.navbar-nav
+        %li.nav-item
+          = link_to 'Create new group', new_group_chat_path
+        %li.nav-item
+          = link_to "Home", group_chats_path
+        %li.nav-item
+          %a{href: "#{}"} Contact
+        %li.nav-item
+          %a{:href => "#"} About
+        %li.nav-item.dropdown
+          %a#responsiveNavbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}= gravatar_for current_user
+          .dropdown-menu{"aria-labelledby" => "responsiveNavbarDropdown"}
+            .dropdown-item
+              = link_to "Sign out", destroy_user_session_path, method: :delete, id: "sign_out"

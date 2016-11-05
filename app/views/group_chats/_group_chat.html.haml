@@ -1,0 +1,12 @@
+%a.list-group-item{href: group_chat_path(group_chat)}
+  - last_message = group_chat.messages.last
+  %h3.list-group-item-heading=group_chat.title
+  %h5.list-group-item-heading
+    -if last_message
+      = last_message.user.name
+  %p.list-group-item-text
+    - if last_message
+      =last_message.body
+  %span.tag.tag-info
+    - if last_message
+      =last_message.created_at.to_formatted_s(:short)
