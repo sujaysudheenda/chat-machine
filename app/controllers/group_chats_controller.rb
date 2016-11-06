@@ -9,6 +9,7 @@ class GroupChatsController < ApplicationController
 
   def create
     @group_chat = current_user.group_chat.build(group_chat_params)
+
     if @group_chat.save
       flash[:success] = 'Group added added!'
       redirect_to group_chats_path

@@ -61,6 +61,12 @@ group :development, :test do
   gem 'pry-stack_explorer', '~> 0.4.9'
 end
 
+  group :test do
+    gem 'rspec-rails', '~> 3.5'
+    gem 'simplecov', require: false
+    gem 'rails-controller-testing', '~> 1.0'
+  end
+
 group :development do
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> in views
