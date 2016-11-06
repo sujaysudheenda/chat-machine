@@ -16,8 +16,7 @@ Rails.application.configure do
 
   config.action_cable.url = "wss://openchatapp.herokuapp.com/cable"
 
-  config.action_cable.allowed_request_origins = ['https://openchatapp.herokuapp.com/',
-                                               'http://openchatapp.herokuapp.com/']
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
   #
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
