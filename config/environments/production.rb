@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
-  config.action_cable.url = "http://openchatapp.herokuapp.com/cable"
+  config.action_cable.url = "https://openchatapp.herokuapp.com/cable"
 
   config.action_cable.allowed_request_origins = ['https://openchatapp.herokuapp.com/',
                                                'http://openchatapp.herokuapp.com/']
